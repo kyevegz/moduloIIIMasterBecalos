@@ -1,0 +1,12 @@
+console.log(typeof 42);
+console.log(typeof "veinticinco");
+console.log(typeof -660);
+console.log(typeof true);
+console.log(typeof 0);
+console.log(typeof "");
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(typeof FAlSE);
+console.log(typeof [3,4]);
+console.log(typeof [6,8,9,0]);
+console.log(typeof [(1, 8), (9, 1.88), ("hola", "fruta")]);
