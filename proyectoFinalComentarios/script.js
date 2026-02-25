@@ -13,12 +13,13 @@ spanContador.textContent = contador.toString();//lo inicializa con el valor de 0
 const diasSp = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes",
     "Sábado" ], 
     meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
 formulario.addEventListener('submit', function(event){
 
     
     //-----formato de fecha------- La fecha sale en inglés, así que para mayor estética la vamos a formatear
     fechaAc = new Date();
-        let [mes, diaS, diaN, hora, minuto, segundo] = [
+        let [mes, diaS, diaN, hora, minuto, segundo] = [//Se obtienen los datos obtenidos, así les damos formato a los que vienen en inglés
             fechaAc.getMonth(),
             fechaAc.getDay(),
             fechaAc.getDate(),
@@ -26,7 +27,7 @@ formulario.addEventListener('submit', function(event){
             fechaAc.getMinutes(),
             fechaAc.getSeconds(),
         ];
-console.log(mes, diaS, hora, minuto,segundo);
+
     for(let i = 0; i < 7; i++){//recorre el array de días de semana hasta que el valor numérico coincida con el día en español
         if(i === diaS ){
             diaS = diasSp[i];
@@ -40,7 +41,7 @@ console.log(mes, diaS, hora, minuto,segundo);
     }
     
     //----------------creación de los elementos en el DOM--------------
-    console.log(mes, diaS, hora, minuto, segundo);
+
     //h3 del usuario
     Tusuario = document.createElement('h3');
     Tusuario.id = 'tag-name'+contador.toString();
@@ -81,38 +82,31 @@ console.log(mes, diaS, hora, minuto,segundo);
     
 
     //-----------asignación del contenido que llevarán las etiquetas ya creadas----------
-    TComentario.textContent = comentario;
-    //Tfecha.textContent = fechaAct;
-    Tfecha.textContent = diaS + " " + diaN + " de " + mes + " a las " + hora +":" + minuto + ":" +segundo;
-    Tusuario.textContent = nombre  + " " + apellido;
-    TEliminar.textContent = "Eliminar";
-    TEliminar.setAttribute('onclick', 'eliminar(this)');
-    section.prepend(Tdivisor);
-
-    Tdivisor.appendChild(Timagen);
-
-    //console.log(TdivisorFlex);
-    Tdivisor.appendChild(TdivisorFlex);
-    TdivisorFlex.appendChild(Tusuario);
-    Tusuario = document.getElementById('tag-name'+contador.toString());
-
-    //luego del usuario añado la fecha
-    TdivisorFlex.appendChild(Tfecha);
-    Tfecha = document.getElementById('tag-date'+contador.toString());
-
-    //finalmente, el comentario
-    TdivisorFlex.appendChild(TComentario);
-    TComentario = document.getElementById('tag-comment'+contador.toString());
+    TComentario.textContent = comentario;//el texto
+    Tfecha.textContent = diaS + " " + diaN + " de " + mes + " a las " + hora +":" + minuto + ":" +segundo;//la fecha
+    Tusuario.textContent = nombre  + " " + apellido;//nombre y apellido
+    TEliminar.textContent = "Eliminar";//el botón de eliminar
+    TEliminar.setAttribute('onclick', 'eliminar(this)');//se le añade el atributo onclick y la función de eliminar pasando el parámetro this, es decir, this elemento
     
-    TdivisorFlex.appendChild(TEliminar);
-    //limpiar la zona de comentarios
+
+    //---------inserción en el DOM------------
+    //insertar el div del comentario en el div de lista
+    section.prepend(Tdivisor);
+    Tdivisor.appendChild(Timagen);//añadir dentro del div anterior la imágen
+    Tdivisor.appendChild(TdivisorFlex);//añadir el div flex que contiene los datos escritos
+    TdivisorFlex.appendChild(Tusuario);//en el div flex se mete lo del usuario
+    TdivisorFlex.appendChild(Tfecha);//la fecha
+    TdivisorFlex.appendChild(TComentario);//el comentario
+    TdivisorFlex.appendChild(TEliminar);//el botón de eliminar
+
+    //limpiar la zona de comentarios y deshabilitar los input de nombre y apellido
     document.getElementById('input-comment').value = "";
     document.getElementById('input-name').disabled = true;
     document.getElementById('input-lastname').disabled = true;
 
-    spanContador.textContent = (contador + 1).toString();
+    spanContador.textContent = (contador + 1).toString();//actualizar el span de contador
 
-    contador++;
+    contador++;//incrementar contador
 });
 
 
