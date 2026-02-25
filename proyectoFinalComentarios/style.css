@@ -38,7 +38,7 @@ body{
 }
 
 .form-comments textarea{
-   padding: 10px;
+    padding: 10px;
     margin-bottom: 12px;
     border: 1px solid #3b5998;
     background-color: #c8d3ec;
@@ -48,11 +48,6 @@ body{
 .form-comments input[type = "text"]::placeholder, textarea::placeholder{
     color: #3b58988b;
 }
-
-/* .comments{
-    display: flex;
-    flex-direction: column;
-} */
 
 .title{
     color: #3b5998;
