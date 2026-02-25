@@ -95,3 +95,13 @@ body{
 .delete-comment:hover{
     color: red;
 }
+
+.number{
+    display: inline-block;
+    background-color:#3b5998;
+    color: #c8d3ec;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}

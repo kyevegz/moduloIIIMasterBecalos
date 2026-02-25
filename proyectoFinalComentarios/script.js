@@ -5,6 +5,8 @@ TEliminar = "";
 let fechaAct = "";
 let contador = 0;
 const section = document.getElementById('comment-list');
+let spanContador = document.getElementById("contador");
+spanContador.textContent = contador.toString();
 
 formulario.addEventListener('submit', function(event){
     fechaAct = new Date().toString()
@@ -74,6 +76,9 @@ formulario.addEventListener('submit', function(event){
     document.getElementById('input-comment').value = "";
     document.getElementById('input-name').disabled = true;
     document.getElementById('input-lastname').disabled = true;
+
+    spanContador.textContent = (contador + 1).toString();
+
     contador++;
 });
 
@@ -82,4 +87,6 @@ function eliminar(btn){
     let id = btn;
     console.log(id.id);
     btn.parentElement.parentElement.remove();
+    contador--;
+    spanContador.textContent = contador.toString();
 }
