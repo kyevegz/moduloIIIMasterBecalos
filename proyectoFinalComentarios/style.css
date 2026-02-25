@@ -66,8 +66,13 @@ body{
     flex-direction: row;
 }
 
+.comment div{
+    padding: 10px 0;
+}
 .comment img{
-    width: 60px;
+    
+    width: 90px;
+
     margin-right: 10px;
 }
 .comment div h5{
@@ -77,4 +82,16 @@ body{
     border-bottom: 1px solid rgb(103, 103, 103);
     margin-bottom: 10px;
 
+}
+
+.delete-comment{
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: rgb(103, 103, 103);
+    cursor: pointer;
+}
+
+.delete-comment:hover{
+    color: red;
 }

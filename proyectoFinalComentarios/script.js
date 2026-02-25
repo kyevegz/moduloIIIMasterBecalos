@@ -1,6 +1,7 @@
 let formulario = document.getElementById(('form-comments'));
 let nombre = "", apellido = "", comentario = "", Tusuario = "", 
-Tfecha = "", TComentario = "", Tdivisor = "", Timagen = "", TdivisorFlex = "";
+Tfecha = "", TComentario = "", Tdivisor = "", Timagen = "", TdivisorFlex = "",
+TEliminar = "";
 let fechaAct = "";
 let contador = 0;
 const section = document.getElementById('comment-list');
@@ -27,6 +28,10 @@ formulario.addEventListener('submit', function(event){
     Tdivisor = document.createElement('div');
     Tdivisor.id = "comment"+contador.toString();
     Tdivisor.className = "comment";
+
+    TEliminar = document.createElement('button');
+    TEliminar.id = "delete"+contador.toString();
+    TEliminar.className = "delete-comment";
     //Tdivisor.textContent = "caifanes";
 
 
@@ -45,9 +50,10 @@ formulario.addEventListener('submit', function(event){
     TComentario.textContent = comentario;
     Tfecha.textContent = fechaAct;
     Tusuario.textContent = nombre  + " " + apellido;
-    
+    TEliminar.textContent = "Eliminar";
+    TEliminar.setAttribute('onclick', 'eliminar(this)');
     section.prepend(Tdivisor);
-   
+
     Tdivisor.appendChild(Timagen);
 
     //console.log(TdivisorFlex);
@@ -63,9 +69,17 @@ formulario.addEventListener('submit', function(event){
     TdivisorFlex.appendChild(TComentario);
     TComentario = document.getElementById('tag-comment'+contador.toString());
     
+    TdivisorFlex.appendChild(TEliminar);
     //limpiar la zona de comentarios
     document.getElementById('input-comment').value = "";
     document.getElementById('input-name').disabled = true;
     document.getElementById('input-lastname').disabled = true;
     contador++;
 });
+
+
+function eliminar(btn){
+    let id = btn;
+    console.log(id.id);
+    btn.parentElement.parentElement.remove();
+}
