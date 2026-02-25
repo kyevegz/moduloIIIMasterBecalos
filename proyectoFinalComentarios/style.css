@@ -10,6 +10,50 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.form-comments{
+    background-color: rgb(216, 216, 216);
+    padding: 15px;
+    width: min-content;
+    margin: 10px 0;
+}
+
+.form-comments input[type="submit"]{
+    padding: 8px;
+    color:white;
+    background: linear-gradient(#21345d,#304c89, #3b5998, #304c89, #21345d);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+}
+
+.form-comments input[type = "text"]{
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #3b5998;
+    background-color: #c8d3ec;
+    color: #3b5998;
+}
+
+.form-comments textarea{
+   padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #3b5998;
+    background-color: #c8d3ec;
+    color: #3b5998; 
+}
+
+.form-comments input[type = "text"]::placeholder, textarea::placeholder{
+    color: #3b58988b;
+}
+
+/* .comments{
+    display: flex;
+    flex-direction: column;
+} */
+
 .title{
     color: #3b5998;
     font-size: 3rem;
@@ -17,4 +61,20 @@ body{
 
 .comment{
     background-color: rgb(204, 204, 204);
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.comment img{
+    width: 60px;
+    margin-right: 10px;
+}
+.comment div h5{
+    
+    color: rgb(103, 103, 103);
+    display: inline-block;
+    border-bottom: 1px solid rgb(103, 103, 103);
+    margin-bottom: 10px;
+
 }
