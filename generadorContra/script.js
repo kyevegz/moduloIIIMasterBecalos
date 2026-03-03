@@ -42,35 +42,27 @@ formulario.addEventListener('submit', function(event){
         arrayPosibles = [];
         if(checkMayus.checked){
             checkeados.mayus = true;
-            console.log("Mayúscula");
         }else{
             checkeados.mayus = false;
-            console.log("Desmarcado");
         }
         
         if(checkMinus.checked){
             checkeados.minus = true;
-            console.log("minus");
         }else{
             checkeados.minus = false;
-            console.log("Desmarcado");
         }
  
         if(checkNumber.checked){
             checkeados.numero = true;
-            console.log("number");
         }else{
             checkeados.numero = false;
-            console.log("Desmarcado");
         }
         
    
         if(checkSymbol.checked){
             checkeados.simbolo = true;
-            console.log("symbol");
         }else{
             checkeados.simbolo = false;
-            console.log("Desmarcado");
         }
         
    
@@ -110,22 +102,19 @@ formulario.addEventListener('submit', function(event){
             case 0:
                 rdmLSpace = Math.floor(Math.random() * 26); 
                 contraFinal += letras(rdmLSpace).toUpperCase();
-                console.log(letras (rdmLSpace).toUpperCase());
+                
                 break;
             case 1:
                 rdmLSpace = Math.floor(Math.random() * 26)
                 contraFinal += letras(rdmLSpace);
-                console.log(letras (rdmLSpace));
                 break;
             case 2:
                 rdmLSpace = Math.floor(Math.random() * 9);
                 contraFinal += rdmLSpace.toString();
-                console.log(rdmLSpace);
                 break;
             case 3:
                 rdmLSpace = Math.floor(Math.random() * 16);
                 contraFinal += simbolos(rdmLSpace);
-                console.log(simbolos(rdmLSpace));
                 break;
         }
         contador--;
